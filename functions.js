@@ -4,8 +4,8 @@ export const generatorID = () => {
   return Date.now();
 };
 
-export function addTodo(title, completed = false) {
-  todos = [...todos, { id: generatorID(), title, completed }];
+export function addTodo({ title, id = generatorID(), completed = false }) {
+  todos = [...todos, { id, title, completed }];
 }
 
 export function toggleTodo(id) {

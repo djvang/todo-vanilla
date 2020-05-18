@@ -1,4 +1,4 @@
-import { todos, addTodo } from "./functions";
+import { todos, addTodo, toggleTodo } from "./functions";
 import { parseTodos, parseFilter } from "./parse";
 const filters = [];
 

@@ -1,25 +1,11 @@
-const todos = [
-  {
-    id: 1,
-    title: "Todo 1",
-    completed: false
-  },
-  {
-    id: 2,
-    title: "Todo 2",
-    completed: true
-  },
-  {
-    id: 3,
-    title: "Todo 3",
-    completed: false
-  }
-];
+import { todos, addTodo } from "./functions";
+import { parseTodos, parseFilter } from "./parse";
+const filters = [];
 
-const generatorID = () => {
-  return todos.length;
-};
+// парсим данные из DOM
+const addTodoField = document.querySelector(".new-todo");
+parseTodos(addTodo);
+parseFilter(filter => filters.push(filter));
 
-const todoApp = document.querySelector(".todoapp");
-
-console.log(todoApp);
+// работаем с данными
+console.log(addTodoField.value, todos, filters);

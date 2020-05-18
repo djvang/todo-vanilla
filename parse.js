@@ -17,8 +17,9 @@ export const parseFilter = callback => {
 
   filterFields.forEach(filterField => {
     if (filterField.dataset.filter) {
+      const selected = filterField.classList.contains("selected");
       const filter = JSON.parse(filterField.dataset.filter);
-      callback(filter);
+      callback(filter, selected);
     }
   });
 };

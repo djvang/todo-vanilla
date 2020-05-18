@@ -1,18 +1,24 @@
 export const parseTodos = callback => {
   const todoFields = document.querySelectorAll(".todo-list li");
   todoFields.forEach(todoField => {
-    const title = todoField.querySelector("label").innerText;
-    const completed = todoField.querySelector(".toggle").checked;
+    const label = todoField.querySelector("label");
+    const toggle = todoField.querySelector(".toggle");
 
-    callback(title, completed);
+    const id = label.dataset.id;
+    const title = label.innerText;
+    const completed = toggle.checked;
+
+    callback({ id, title, completed });
   });
 };
 
 export const parseFilter = callback => {
-  const filterFields = document.querySelectorAll(".filters a");
-  filterFields.forEach(filterField => {
-    const filter = filterField.innerText.toLowerCase();
+  const filterFields = document.querySelectorAll("[data-filter]");
 
-    callback(filter);
+  filterFields.forEach(filterField => {
+    if (filterField.dataset.filter) {
+      const filter = JSON.parse(filterField.dataset.filter);
+      callback(filter);
+    }
   });
 };

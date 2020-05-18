@@ -21,20 +21,22 @@
         <ul class="todo-list">
           <li class="">
             <div class="view">
-              <input class="toggle" type="checkbox" /><label>Todo 1</label
+              <input class="toggle" type="checkbox" /><label data-id="1"
+                >Todo 1</label
               ><button class="destroy"></button>
             </div>
           </li>
           <li class="completed">
             <div class="view">
-              <input class="toggle" type="checkbox" checked /><label
+              <input class="toggle" type="checkbox" checked /><label data-id="2"
                 >Todo 2</label
               ><button class="destroy"></button>
             </div>
           </li>
           <li class="editing">
             <div class="view">
-              <input class="toggle" type="checkbox" /><label>Todo 3</label
+              <input class="toggle" type="checkbox" /><label data-id="3"
+                >Todo 3</label
               ><button class="destroy"></button>
             </div>
             <input type="text" class="edit" value="Todo 3" />
@@ -45,13 +47,13 @@
         <span class="todo-count"><strong>2</strong> items left</span>
         <ul class="filters">
           <li>
-            <a href="/" class="selected">All</a>
+            <a data-filter='"all"' href="/" class="selected">All</a>
           </li>
           <li>
-            <a href="/active">Active</a>
+            <a data-filter='"active"' href="/active">Active</a>
           </li>
           <li>
-            <a href="/completed">Completed</a>
+            <a data-filter='"completed"' href="/completed">Completed</a>
           </li>
         </ul>
         <button class="clear-completed">Clear completed</button>
